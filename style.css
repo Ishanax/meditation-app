@@ -1,0 +1,31 @@
+/*remove any other styling first */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.time-select, .sound-picker, .player-container {
+  height: 80%;
+  flex: 1;
+}
+
+.time-select {
+  background: #a5a58d;
+}
+
+.sound-picker {
+  background: #cb997e;
+}
+
+.player-container {
+  background: #ffe8d6;
+
+}
