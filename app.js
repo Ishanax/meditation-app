@@ -40,7 +40,17 @@ const app = () => {
       //als long as song keeps going this will update, wills top updating when song stops
     song.ontimeupdate = () =>{
       let currentTime = song.currentTime;
-    }
+      let elapsed = fakeDuration - currentTime;
+      let seconds = Math.floor(elapsed % 60); //when the elapsed time gets to sixty it will reset back to 
+      let minutes = Math.floor(elapsed / 60);
+
+      //Animate the progress circle
+      let progress = outlineLength - (currentTime / fakeDuration) * outlineLength;
+      outline.style.strokeDashoffset = progress;
+
+      //Animate the text
+      timeDisplay.textContent = `${minutes}:${seconds}`;
+    };
 };
 
 
