@@ -19,9 +19,28 @@ const app = () => {
 
   //Play sound function on click button
     play.addEventListener('click', () =>{
-      song.play()
+      checkPlaying(song);
     });
 
+    // create function to stop and play the sound
+    const checkPlaying = song => {
+      if(song.paused){
+        song.play();
+        video.play();
+        play.src = './svg/pause.svg';
+      }
+      else{
+        song.pause();
+        video.pause();
+        play.src = './svg/play.svg'
+      }
+    };
+
+    //Animate the circle 
+      //als long as song keeps going this will update, wills top updating when song stops
+    song.ontimeupdate = () =>{
+      let currentTime = song.currentTime;
+    }
 };
 
 
