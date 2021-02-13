@@ -18,6 +18,17 @@ const app = () => {
   outline.style.strokeDasharray = outlineLength;
   outline.style.strokeDashoffset = outlineLength;
 
+  //Pick different sounds 
+  sounds.forEach(sound =>{
+    sound.addEventListener('click', function(){
+      song.src = this.getAttribute('data-sound');
+      video.src = this.getAttribute('data-video');
+      checkPlaying(song);
+
+    })
+  })
+
+
   //Play sound function on click button
     play.addEventListener('click', () =>{
       checkPlaying(song);
@@ -60,6 +71,13 @@ const app = () => {
 
       //Animate the text
       timeDisplay.textContent = `${minutes}:${seconds}`;
+      //make timer stop instead of going into minus
+      if(currentTime >= fakeDuration){
+        song.pause();
+        song.currentTime = 0;
+        play.src = "./svg/play.svg";
+        video.pause();
+      }
     };
 };
 
