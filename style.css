@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+.moving-outline {
+  color: green;
+}
+
 .app {
   height: 100vh;
   display: flex;
