@@ -88,11 +88,11 @@ video{
 
 /*select the first sound picker button (rain)*/
 .sound-picker button:nth-child(1) {
-background: #4972a1;
+background: #6296d1;
 }
 
 .sound-picker button:nth-child(2) {
- background: #a14f49; 
+ background: #f5c423; 
 }
 
 .sound-picker button img {
